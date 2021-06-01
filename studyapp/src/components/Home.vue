@@ -1,54 +1,6 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="black"
-    >
-      <div class="d-flex align-center">
-        <v-toolbar-title class="headline" style="color:white;">
-          <a href="/" style="text-decoration:none; color:white;"><v-span>Study </v-span><v-span style="color:red">Group</v-span></a>
-        </v-toolbar-title>
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-div id="toolBarPadding">
-        <v-btn icon color="white" href="/">
-          <v-span>HOME</v-span>
-        </v-btn>
-      </v-div>
-      <v-div id="toolBarPadding">
-        <v-btn icon color="white" href="./components/Study.vue">
-          <v-span>Study</v-span>
-        </v-btn>
-      </v-div>
-      <v-div id="toolBarPadding1">
-        <v-btn icon color="white" href="./components/MyGroup.vue">
-          <v-span>My Group</v-span>
-        </v-btn>
-      </v-div>
-      <v-div id="toolBarPadding">
-        <v-btn icon color="white" href="./components/Login.vue">
-          <v-span>Login</v-span>
-        </v-btn>
-      </v-div>
-      <v-div id="toolBarPadding">
-        <v-btn icon color="white" href="./components/Study.vue">
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-      </v-div>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-        color="white"
-      >
-        <span class="mr-2"></span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-    <v-content>
+  <v-container>
+  <v-content>
       <section id="hero">
         <v-row no-gutters>
           <v-img
@@ -105,32 +57,64 @@
         </v-row>
       </section>
     </v-content>
-    <v-main>
-      <Home/>
-    </v-main>
-  </v-app>
+  </v-container>
 </template>
 
 <script>
-import Home from './components/Home';
+  export default {
+    name: 'Home',
 
-export default {
-  name: 'App',
-
-  components: {
-    Home,
-  },
-
-  data: () => ({
-    //
-  }),
-};
+    data: () => ({
+      ecosystem: [
+        {
+          text: 'vuetify-loader',
+          href: 'https://github.com/vuetifyjs/vuetify-loader',
+        },
+        {
+          text: 'github',
+          href: 'https://github.com/vuetifyjs/vuetify',
+        },
+        {
+          text: 'awesome-vuetify',
+          href: 'https://github.com/vuetifyjs/awesome-vuetify',
+        },
+      ],
+      importantLinks: [
+        {
+          text: 'Documentation',
+          href: 'https://vuetifyjs.com',
+        },
+        {
+          text: 'Chat',
+          href: 'https://community.vuetifyjs.com',
+        },
+        {
+          text: 'Made with Vuetify',
+          href: 'https://madewithvuejs.com/vuetify',
+        },
+        {
+          text: 'Twitter',
+          href: 'https://twitter.com/vuetifyjs',
+        },
+        {
+          text: 'Articles',
+          href: 'https://medium.com/vuetify',
+        },
+      ],
+      whatsNext: [
+        {
+          text: 'Explore components',
+          href: 'https://vuetifyjs.com/components/api-explorer',
+        },
+        {
+          text: 'Select a layout',
+          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
+        },
+        {
+          text: 'Frequently Asked Questions',
+          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
+        },
+      ],
+    }),
+  }
 </script>
-<style scoped>
-  #toolBarPadding{
-    padding:30px;
-  }
-  #toolBarPadding1{
-    padding:45px;
-  }
-</style>
